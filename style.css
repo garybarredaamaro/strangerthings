@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "ITC Benguiat";
+  src: url('./fonts/itc_benguiat_book.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "ITC Benguiat", serif;
+  font-size: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.title-container{
+  text-shadow: 0 0 8px #FF0000;
+  text-align: center;
+  letter-spacing: -12px;
+}
+
+.title-container p {
+  line-height: 80%;
+}
+
+.title-container.grow p {
+  animation: grow 10s linear forwards infinite;
+}
+.title-container p:first-of-type{
+  text-decoration: overline;
+}
+
+.episode-container {
+  display: none;
+  color: white;
+  text-align: center;
+  letter-spacing: -12px;
+  font-size: 100px;
+  animation: growEpisode 10s linear forwards infinite;
+}
+
+.skip {
+  display: none;
+  position: absolute;
+  height: 50px;
+  width: 136px;
+  background-color: lightgray;
+  font-size: 24px;
+  font-family: sans-serif;
+  bottom: 36px;
+  right: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+    line-height: 80%;
+    text-shadow: 0 0 8px #FF0000;
+    opacity: 1;
+  }
+  to {
+    transform: scale(3);
+    line-height: 200%;
+    letter-spacing: 0px;
+    text-shadow: 0 0 50px #FF0000;
+    opacity: 0;
+  }
+}
+
+
+@keyframes growEpisode {
+  0% {
+    transform: scale(1);
+    line-height: 80%;
+    text-shadow: 0 0 8px white;
+  }
+  10% {
+    transform: scale(1.1);
+    line-height: 100%;
+    text-shadow: 0 0 50px #FF0000;
+  }
+  100% {
+    transform: scale(2);
+    letter-spacing: 0px;
+    color: #FF0000;
+    line-height: 100%;
+    text-shadow: 0 0 50px #FF0000;
+  }
+}
