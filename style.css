@@ -51,7 +51,7 @@ body {
 }
 
 .skip {
-  display: none;
+  visibility: hidden;
   position: absolute;
   height: 50px;
   width: 136px;
