@@ -4,27 +4,29 @@ const skip  = document.querySelector('.skip')
 
 start()
 
+setInterval(start, 10000);
+
 function start() {
-  setTimeout(() => {
-    title.style.display = 'block'
-    episode.style.display = 'none'
-    title.classList.add('grow')
-    episode.classList.remove('grow')
-
-    skip.style.visibility = 'visible'
-  },1000)
-
-  setTimeout(() => {
-    skip.style.visibility = 'hidden'
-  }, 4000)
-  
-  setTimeout(() => {
-    title.style.display = 'none'
-    episode.style.display = 'block'
-    episode.classList.add('grow')
-    title.classList.remove('grow')
-  },5000)  
+  setTimeout(startTitle,1000)
+  setTimeout(hideSkipButton, 4000)
+  setTimeout(startEpisode,5000)  
 }
 
+function startTitle() {
+  skip.style.visibility = 'visible'
+  title.style.display = 'block'
+  episode.style.display = 'none'
+  title.classList.add('grow')
+  episode.classList.remove('grow')
+}
 
-setInterval(start, 10000);
+function hideSkipButton() {
+  skip.style.visibility = 'hidden'
+}
+
+function startEpisode() {
+  title.style.display = 'none'
+  episode.style.display = 'block'
+  episode.classList.add('grow')
+  title.classList.remove('grow')
+}
