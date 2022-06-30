@@ -12,20 +12,26 @@
 body {
   font-family: "ITC Benguiat", serif;
   font-size: 200px;
+  background-color: black;
+}
+
+.container {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+}
+
+.container.noevent {
+  pointer-events: none;
 }
 
 .title-container{
-  text-shadow: 0 0 8px #FF0000;
+  text-shadow: 0 0 3px #FF0000;
   text-align: center;
   letter-spacing: -12px;
 }
@@ -35,7 +41,7 @@ body {
 }
 
 .title-container.grow p {
-  animation: grow 10s linear forwards infinite;
+  animation: grow 10s linear;
 }
 .title-container p:first-of-type{
   text-decoration: overline;
@@ -47,7 +53,7 @@ body {
   text-align: center;
   letter-spacing: -12px;
   font-size: 100px;
-  animation: growEpisode 10s linear forwards infinite;
+  animation: growEpisode 6s linear;
 }
 
 .skip {
@@ -67,6 +73,10 @@ body {
   cursor: pointer;
 }
 
+.title-container.glow {
+  animation: glow 5s linear;
+}
+
 @keyframes grow {
   from {
     transform: scale(1);
@@ -75,7 +85,7 @@ body {
     opacity: 1;
   }
   to {
-    transform: scale(3);
+    transform: scale(2.5);
     line-height: 200%;
     letter-spacing: 0px;
     text-shadow: 0 0 50px #FF0000;
@@ -96,10 +106,19 @@ body {
     text-shadow: 0 0 50px #FF0000;
   }
   100% {
-    transform: scale(2);
+    transform: scale(1.5);
     letter-spacing: 0px;
     color: #FF0000;
     line-height: 100%;
     text-shadow: 0 0 50px #FF0000;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 3px #FF0000;
+  }
+  to {
+    text-shadow: 0 0 20px #FF0000;
   }
 }

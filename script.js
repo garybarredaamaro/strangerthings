@@ -1,15 +1,27 @@
 const title = document.querySelector('.title-container')
 const episode  = document.querySelector('.episode-container')
 const skip  = document.querySelector('.skip')
+const audio  = document.querySelector('audio')
+const body = document.querySelector('body')
+const container = document.querySelector('.container')
 
-start()
-
-setInterval(start, 10000);
+window.onload = () => {
+  container.addEventListener('click', start)
+}
 
 function start() {
-  setTimeout(startTitle,1000)
-  setTimeout(hideSkipButton, 4000)
-  setTimeout(startEpisode,5000)  
+  container.classList.add('noevent')
+  title.classList.remove('grow')
+  title.classList.remove('glow')
+  episode.classList.remove('grow')
+  title.style.display = 'block'
+  episode.style.display = 'none'
+  audio.currentTime = 0
+  audio.play()
+  title.classList.add('glow')
+  setTimeout(startTitle, 3000)
+  setTimeout(hideSkipButton, 6000)
+  setTimeout(startEpisode,8500)
 }
 
 function startTitle() {
